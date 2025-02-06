@@ -2,6 +2,7 @@
 name = "bin-packets"
 version = "0.1.0"
 edition = "2021"
+publish = false
 
 [dependencies]
-bincode = "2.0.0-rc.3"
+bincode = {version="2.0.0-rc.3", features = ["derive", "alloc"], default-features = false}
