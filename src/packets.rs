@@ -11,8 +11,7 @@ pub struct ScientificPacket {
 #[derive(Debug, Clone, Copy, Encode, Decode, PartialEq, Eq)]
 pub enum CommandPacket {
     SyncTime(u32),
-    MoveServoDegrees(i32),
-    EchoMessage(u8),
+    Ping,
     ConnectionTest(ConnectionTest),
     EjectorPhaseSet(EjectorPhase),
 }
