@@ -33,8 +33,5 @@ pub struct TelemetryPacket {
 
 #[derive(Debug, Clone, Copy, Encode, Decode)]
 pub enum ApplicationPacket {
-    Scientific(ScientificPacket),
     Command(CommandPacket),
-    Telemetry(TelemetryPacket),
-    Info(InfoPacket),
 }
