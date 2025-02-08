@@ -1,5 +1,7 @@
 use bincode::{Decode, Encode};
 
+use crate::data::EjectorStatus;
+
 #[derive(Debug, Clone, Copy, Encode, Decode, PartialEq)]
 pub struct ScientificPacket {
     pub packets: u32,
@@ -34,4 +36,5 @@ pub struct TelemetryPacket {
 #[derive(Debug, Clone, Copy, Encode, Decode)]
 pub enum ApplicationPacket {
     Command(CommandPacket),
+    EjectorStatus(EjectorStatus),
 }

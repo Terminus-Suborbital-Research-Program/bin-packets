@@ -11,8 +11,8 @@ use crate::{
 #[derive(Debug, Clone, Copy, Encode, Decode)]
 pub struct EjectorStatus {
     pub phase: EjectorPhase,
-    pub time_in_phase: DurationMillis,
-    pub timestamp: UnixTimestampMillis,
+    pub time_in_phase: u64,
+    pub timestamp: u64,
     pub packet_number: u16,
 }
 
