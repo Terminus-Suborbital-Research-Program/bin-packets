@@ -1,6 +1,7 @@
 use bincode::{Decode, Encode};
 
 use crate::data::IcarusStatus;
+use crate::{data::EjectorStatus, phases::EjectorPhase};
 
 #[derive(Debug, Clone, Copy, Encode, Decode, PartialEq)]
 pub struct ScientificPacket {
@@ -8,12 +9,12 @@ pub struct ScientificPacket {
     pub temperature: f32,
 }
 
-#[derive(Debug, Clone, Copy, Encode, Decode, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, Encode, Decode, PartialEq, Eq)]
 pub enum CommandPacket {
     SyncTime(u32),
-    MoveServoDegrees(i32),
-    EchoMessage(u8),
+    Ping,
     ConnectionTest(ConnectionTest),
+    EjectorPhaseSet(EjectorPhase),
 }
 
 #[derive(Debug, Clone, Copy, Encode, Decode)]
@@ -37,4 +38,5 @@ pub struct TelemetryPacket {
 pub enum ApplicationPacket {
     Command(CommandPacket),
     IcarusState(IcarusStatus),
+    EjectorStatus(EjectorStatus),
 }
