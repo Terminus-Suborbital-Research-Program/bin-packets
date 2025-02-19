@@ -1,9 +1,9 @@
 #![no_std]
-mod commands;
-mod data;
-mod packets;
-mod phases;
-mod types;
+pub mod commands;
+pub mod data;
+pub mod packets;
+pub mod phases;
+pub mod types;
 
 pub use commands::*;
 pub use data::*;
