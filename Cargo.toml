@@ -6,3 +6,4 @@ publish = false
 
 [dependencies]
 bincode = {version="2.0.0-rc.3", features = ["derive"], default-features = false}
+defmt = "0.3.10"

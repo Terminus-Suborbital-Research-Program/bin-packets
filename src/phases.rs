@@ -4,9 +4,10 @@ stateless and do not require any phase tracking.
 */
 
 use bincode::{Decode, Encode};
+use defmt::Format;
 
 /// Phases for JUPITER Pi
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Encode, Decode)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Encode, Decode, Format)]
 pub enum JupiterPhase {
     PowerOn,
     MainCamStart,
@@ -18,7 +19,7 @@ pub enum JupiterPhase {
 }
 
 /// Phases for ICARUS
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Encode, Decode)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Encode, Decode, Format)]
 pub enum IcarusPhase {
     Ejection,
     FlapDeploy,
@@ -29,7 +30,7 @@ pub enum IcarusPhase {
 }
 
 /// Phases for Ejector
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Encode, Decode)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Encode, Decode, Format)]
 pub enum EjectorPhase {
     Standby,
     Ejection,

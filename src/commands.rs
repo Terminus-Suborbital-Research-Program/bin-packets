@@ -1,4 +1,5 @@
 use bincode::{Decode, Encode};
+use defmt::Format;
 
 use crate::{
     phases::{EjectorPhase, IcarusPhase, JupiterPhase},

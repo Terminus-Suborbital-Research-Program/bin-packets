@@ -1,7 +1,8 @@
 use bincode::{Decode, Encode};
+use defmt::Format;
 
 /// Used to represent unix timestamp in milliseconds
-#[derive(Debug, Clone, Copy, Encode, Decode)]
+#[derive(Debug, Clone, Copy, Encode, Decode, Format)]
 pub struct UnixTimestampMillis {
     pub timestamp: u64,
 }
@@ -47,7 +48,7 @@ impl core::ops::Sub<UnixTimestampMillis> for UnixTimestampMillis {
 }
 
 /// A duration represented in milliseconds
-#[derive(Debug, Clone, Copy, Encode, Decode)]
+#[derive(Debug, Clone, Copy, Encode, Decode, Format)]
 pub struct DurationMillis {
     pub duration: u64,
 }
