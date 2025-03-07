@@ -2,6 +2,7 @@ use bincode::{Decode, Encode};
 use defmt::Format;
 
 use crate::data::IcarusStatus;
+use crate::DeviceIdentifier;
 use crate::{data::EjectorStatus, phases::EjectorPhase};
 
 #[derive(Debug, Clone, Copy, Encode, Decode, PartialEq, Format)]
@@ -16,11 +17,6 @@ pub enum CommandPacket {
     Ping,
     ConnectionTest(ConnectionTest),
     EjectorPhaseSet(EjectorPhase),
-}
-
-#[derive(Debug, Clone, Copy, Encode, Decode, Format)]
-pub enum InfoPacket {
-    Heartbeat(u64),
 }
 
 #[derive(Debug, Clone, Copy, Encode, Decode, PartialEq, Eq, Hash, Format)]
@@ -38,6 +34,11 @@ pub struct TelemetryPacket {
 #[derive(Debug, Clone, Copy, Encode, Decode, Format)]
 pub enum ApplicationPacket {
     Command(CommandPacket),
+    Heartbeat {
+        device: DeviceIdentifier,
+        timestamp: u64,
+        sequence_number: u16,
+    },
     IcarusState(IcarusStatus),
     EjectorStatus(EjectorStatus),
 }
