@@ -3,6 +3,7 @@
 pub mod commands;
 pub mod data;
 pub mod devices;
+pub mod link;
 pub mod packets;
 pub mod phases;
 pub mod types;
@@ -10,6 +11,7 @@ pub mod types;
 pub use commands::*;
 pub use data::*;
 pub use devices::*;
+pub use link::*;
 pub use packets::*;
 pub use phases::*;
 pub use types::*;
