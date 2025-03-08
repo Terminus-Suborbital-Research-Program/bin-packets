@@ -8,4 +8,6 @@ pub enum DeviceIdentifier {
     Ejector,
     Atmega,
     Relay,
+    Debug,
+    Broadcast,
 }
